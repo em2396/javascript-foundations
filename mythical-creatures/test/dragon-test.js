@@ -74,7 +74,7 @@ describe('Dragon', function() {
     assert.equal(dragon.hungry, true);
   });
 
-  it.skip('should be full after eating 3 times', function() {
+  it('should be full after eating 3 times', function() {
     var dragon = createDragon('Lady Vox', 'Emily', 'gentle');
 
     var fedDragon = eat(dragon);
@@ -94,7 +94,7 @@ describe('Dragon', function() {
   });
 
   //Spicy:
-  it.skip('should be a fireBreather if aggressive in temperment', function() {
+  it('should be a fireBreather if aggressive in temperment', function() {
     var dragon1 = createDragon('Gray', 'Marley', 'aggressive');
     var dragon2 = createDragon('Sky', 'Susie', 'gentle');
     var dragon3 = createDragon('Mushu', 'Mulan', 'aggressive');
