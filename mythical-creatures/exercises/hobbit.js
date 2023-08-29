@@ -5,15 +5,39 @@
 function createHobbit(name = 'unknown', age = 0){
   hobbitObj = {
     name : name,
-    age : age
+    age : age,
   }
   return hobbitObj;
 }
 
+//Create a function celebrateBirthday with one parameter: hobbitObj
+  //increment hobbitObj.age by one after every year (every time the function is called)
+  //if age is 32 or younger, hobbit isn't an adult (add a isAdult variable to obj)
+
+function celebrateBirthday(hobbitObj){
+  //console.log(hobbitObj.age)
+ // hobbitObj.age++;
+  if(hobbitObj.age <= 32){
+    hobbitObj.isAdult = false;
+    hobbitObj['age']++
+    return hobbitObj;
+  } else if(hobbitObj.age > 32){
+    hobbitObj.isAdult = true;
+    return hobbitObj;
+  }
+}
+
+var hobbit = createHobbit('Meriadoc');
+console.log(hobbit)
+var olderHobbit = celebrateBirthday(hobbit);
+var evenOlderHobbit = celebrateBirthday(olderHobbit);
+var evenOlderStillHobbit = celebrateBirthday(evenOlderHobbit);
+console.log(olderHobbit);
+console.log(evenOlderHobbit);
 
 module.exports = {
   createHobbit, 
-  // celebrateBirthday, 
+  celebrateBirthday, 
   // getRing, 
   // meetPeople, 
   // findFriends
