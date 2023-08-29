@@ -18,8 +18,16 @@ function greetRider(dragon){
   return `Hi, ${dragon.rider}!`
 }
 
+//Create a function eat 
+  //Add two key-value pairs, one to be a boolean of whether the dragon has eaten or not, and the other being the amount of times eaten
+function eat(dragonObj){
+  dragonObj.hungry = true;
+  dragonObj.timesEaten = 0;
+  return dragonObj
+}
 
-
+createDragon('Mushu', 'Mulan', 'calm')
+console.log('Mushu');
 
 
 module.exports = {
