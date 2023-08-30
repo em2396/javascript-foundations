@@ -7,7 +7,8 @@ function createHobbit(name = 'unknown', age = 0){
     name : name,
     age : age,
     isAdult: false,
-    isOld : false
+    isOld : false,
+    acquaintances : []
   }
     return hobbitObj;
   }
@@ -16,20 +17,6 @@ function createHobbit(name = 'unknown', age = 0){
 //Create a function celebrateBirthday with one parameter: hobbitObj
   //increment hobbitObj.age by one after every year (every time the function is called)
   //if age is 32 or younger, hobbit isn't an adult (add a isAdult variable to obj)
-
-// function celebrateBirthday(hobbitObj){
-//   //console.log(hobbitObj.age)
-//   if(hobbitObj.age >= 101){
-//     hobbitObj.age++
-//     hobbitObj['isOld'] = true;
-//     //return hobbitObj;
-//   } else {
-//     hobbitObj.age++
-//     hobbitObj['isOld'] = false;
-//     //return hobbitObj;
-//   }
-//   return hobbitObj;
-// }
 
 function celebrateBirthday(hobbitObj) {
   hobbitObj.age++;
@@ -50,10 +37,40 @@ function celebrateBirthday(hobbitObj) {
 //console.log(olderHobbit);
 //console.log(evenOlderHobbit);
 
+function getRing(hobbitObj) {
+  if(hobbitObj.name === 'Frodo') {
+    return "Here is the ring!";
+  } else {
+    return "You can't have it!"
+  }
+}
+
+function meetPeople(hobbitObj, newFriend) {
+  hobbitObj.acquaintances = [...hobbitObj.acquaintances, ...newFriend]
+  return hobbitObj;
+}
+
+// var people = [ {name: 'Nick', relationship: 'friend'} ];
+// var bilbo = createHobbit('Bilbo');
+// var socialBilbo = meetPeople(bilbo, people);
+// console.log(socialBilbo);
+var nick = {name: 'Nick', relationship: 'friend'};
+var ben = {name: 'Ben', relationship: 'enemy'};
+var people = [ nick, ben ];
+var bilbo = createHobbit('Bilbo');
+var socialBilbo = meetPeople(bilbo, people);
+console.log(socialBilbo);
+console.log(socialBilbo.acquaintances)
+var trisha = {name: 'Trisha', relationship: 'enemy'};
+var dustin = {name: 'Dustin', relationship: 'friend'};
+var morePeople = [ trisha, dustin ];
+var moreSocialBilbo = meetPeople(socialBilbo, morePeople);
+console.log(moreSocialBilbo)
+
 module.exports = {
   createHobbit, 
   celebrateBirthday, 
-  // getRing, 
-  // meetPeople, 
+  getRing, 
+  meetPeople, 
   // findFriends
 }
