@@ -53,24 +53,36 @@ function meetPeople(hobbitObj, newFriend) {
 // var people = [ {name: 'Nick', relationship: 'friend'} ];
 // var bilbo = createHobbit('Bilbo');
 // var socialBilbo = meetPeople(bilbo, people);
-// console.log(socialBilbo);
-var nick = {name: 'Nick', relationship: 'friend'};
-var ben = {name: 'Ben', relationship: 'enemy'};
-var people = [ nick, ben ];
-var bilbo = createHobbit('Bilbo');
-var socialBilbo = meetPeople(bilbo, people);
-console.log(socialBilbo);
-console.log(socialBilbo.acquaintances)
-var trisha = {name: 'Trisha', relationship: 'enemy'};
-var dustin = {name: 'Dustin', relationship: 'friend'};
-var morePeople = [ trisha, dustin ];
-var moreSocialBilbo = meetPeople(socialBilbo, morePeople);
-console.log(moreSocialBilbo)
+// // console.log(socialBilbo);
+// var nick = {name: 'Nick', relationship: 'friend'};
+// var ben = {name: 'Ben', relationship: 'enemy'};
+// var people = [ nick, ben ];
+// var bilbo = createHobbit('Bilbo');
+// var socialBilbo = meetPeople(bilbo, people);
+// // console.log(socialBilbo);
+// // console.log(socialBilbo.acquaintances)
+// var trisha = {name: 'Trisha', relationship: 'enemy'};
+// var dustin = {name: 'Dustin', relationship: 'friend'};
+// var morePeople = [ trisha, dustin ];
+// var moreSocialBilbo = meetPeople(socialBilbo, morePeople);
+// console.log(moreSocialBilbo)
+
+function findFriends(hobbitObj) {
+  var friends = [];
+  for(let i = 0; i < hobbitObj.acquaintances.length; i++) {
+    if(hobbitObj.acquaintances[i].relationship === 'friend'){
+      friends.push(hobbitObj.acquaintances[i].name);
+    }
+  }
+  return friends;
+}
+
+// console.log(findFriends(moreSocialBilbo));
 
 module.exports = {
   createHobbit, 
   celebrateBirthday, 
   getRing, 
   meetPeople, 
-  // findFriends
+  findFriends
 }
