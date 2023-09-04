@@ -22,16 +22,16 @@ function encounterDeliciousVictim(vampireObj) {
   //add a key-value pair to vampireObj ounces drank : 0
   //when the function is invoked, it will add 10 ounces to ouncesdrank
 function drink(vampireObj) {
-  if(!vampireObj.thirsty){
-    return "No thanks, I'm too full."
-  } else {
+  if(vampireObj.ouncesDrank >= 50 && !vampireObj.thirsty){
+    return ("No thanks, I'm too full.", vampireObj);
+  }
   vampireObj.ouncesDrank+=10;
   if(vampireObj.ouncesDrank >= 50){
     vampireObj.thirsty = false;
   }
-}
   return vampireObj;
 }
+
 
 module.exports = {
   createVampire, 
