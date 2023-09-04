@@ -1,25 +1,36 @@
-//Create a function createEvent with three parameters: eventName, month (in string form), and day
-    //create a new variable object newEvent and assign it the value of an object with the keys : title, month, day and the values
-    // as the passed in arguments with their respective parameters: eventName, month, and day
 function createEvent(eventName, month, day) {
+    var events = [];
     var newEvent = {
         title : eventName,
         month : month,
-        day : (function() {
-            if(day >= 32){
-                newEvent['day'] = `Error: ${day} is not a valid day`;
-                return newEvent['day'];
-            } else {
-                newEvent['day'] = day;
-                return newEvent['day'];
-            }
-        })()
+        day : day
+    }
+    if(day < 1 || day > 30) {
+        return `Error: ${day} is not a valid day`
     }
     return newEvent;
 }
 
+function createCalendar(name, eventsArr) {
+    var calendar = {
+        owner : name,
+        events : eventsArr
+    }
+    return calendar;
+}
+
+function reportMonthlyEvents(calendar, month){
+    var monthlyEventsArr = [];
+    for(var i = 0; i < calendar.events.length; i++){
+        if(calendar.events[i].month === month){
+            monthlyEventsArr.push(calendar.events[i])
+        }
+    }
+    return monthlyEventsArr;
+}
+
 module.exports = {  
     createEvent, 
-    //createCalendar, 
-    //reportMonthlyEvents
+    createCalendar, 
+    reportMonthlyEvents
 };
