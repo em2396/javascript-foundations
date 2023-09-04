@@ -45,11 +45,21 @@ function inquirePlace(locationsArr, place){
   }
 }
 
+function findBatLovers(arrOfVamps){
+  var batLovers = [];
+  for(var i = 0; i < arrOfVamps.length; i++){
+    if(arrOfVamps[i].pet === 'bat'){
+      batLovers.push(arrOfVamps[i].name);
+    }
+  }
+  return batLovers;
+}
+
 
 module.exports = {
   createVampire, 
   drink, 
-  // findBatLovers, 
+  findBatLovers, 
   encounterDeliciousVictim, 
   inquirePlace
 }
