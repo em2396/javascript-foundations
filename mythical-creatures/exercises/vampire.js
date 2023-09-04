@@ -15,21 +15,34 @@ function createVampire(vampireName, vampirePet = 'bat') {
   //return 'I want to suck your blood!'
 
 function encounterDeliciousVictim(vampireObj) {
+  if(!vampireObj.thirsty){
+    return `No thanks, I am too full.`
+  } else {
   return 'I WANT TO SUCK YOUR BLOOD!';
+  }
 }
 
 //create a function drink that takes one parameter: vampireObj
   //add a key-value pair to vampireObj ounces drank : 0
   //when the function is invoked, it will add 10 ounces to ouncesdrank
 function drink(vampireObj) {
-  if(vampireObj.ouncesDrank >= 50 && !vampireObj.thirsty){
-    return ("No thanks, I'm too full.", vampireObj);
+  if(vampireObj.ouncesDrank < 50){
+    vampireObj.ouncesDrank+=10;
+    if(vampireObj.ouncesDrank >=50){
+      vampireObj.thirsty = false;
+    }
+    return vampireObj;
+  } else if(!vampireObj.thirsty){
+    return vampireObj;
   }
-  vampireObj.ouncesDrank+=10;
-  if(vampireObj.ouncesDrank >= 50){
-    vampireObj.thirsty = false;
+}
+
+function inquirePlace(locationsArr, place){
+  if(locationsArr.includes(place)){
+    return `Yes, I have spent some time in ${place}.`
+  } else {
+    return `No, I have never been to ${place}.`
   }
-  return vampireObj;
 }
 
 
@@ -38,5 +51,5 @@ module.exports = {
   drink, 
   // findBatLovers, 
   encounterDeliciousVictim, 
-  // inquirePlace
+  inquirePlace
 }
