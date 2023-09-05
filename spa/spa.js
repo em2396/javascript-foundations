@@ -27,11 +27,20 @@ function createService(typeOfTreatment, price) {
 }
 
 function bookServices(customerObj, serviceObj) {
-  //serviceObj.name needs to be passed in to customerObj.bookings
-  
+  customerObj.bookings.push(serviceObj.name);
+  customerObj.bill+=serviceObj.cost;
+  return customerObj;
 }
 
-
+function applyGiftCard(servicesArr, giftCardAmount) {
+  var canAfford = [];
+  for(var i = 0; i < servicesArr.length; i++) {
+    if(servicesArr[i].price <= giftCardAmount){
+      canAfford.push(servicesArr[i].name);
+    }
+  }
+  return canAfford;
+}
 
 
 
@@ -40,5 +49,5 @@ module.exports = {
   greeting, 
   createService,
   bookServices, 
-  // applyGiftCard 
+  applyGiftCard 
 }
