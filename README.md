@@ -43,12 +43,13 @@ Completing all of these test suites is not necessary, but you should be working 
 
 ### Test Suites
 - [X] 🧚 ‍[Mythical Creatures](./mythical-creatures)
+- [X] 🧖‍♀️ [Spa](./spa/)
+- [X] 🎂 [Birthdays](./birthdays)
+- [X] 🗓 [Calendar](./calendar/)
 - [ ] ✈️ [Airport](./airport)
 - [ ] 🎧 [DJ](./dj)
 - [ ] 🍔 [Favorite Foods](./favorite-foods)
 - [ ] 🎮 [Video Games](./video-games/)
-- [X] 🎂 [Birthdays](./birthdays)
-- [X] 🗓 [Calendar](./calendar/)
 - [ ] 💵 [Vending Machine](./dollar-store-vending-machine/)
 - [ ] 🛗 [Elevator](./elevator/)
 - [ ] 📚 [Library](./library)
@@ -57,7 +58,6 @@ Completing all of these test suites is not necessary, but you should be working 
 - [ ] ✂️ [Barber Shop](./barber-shop/)
 - [ ] 🥗 [Meal Planning](./meal-planning/)
 - [ ] 🍜 [Restaurant](./restaurant/)
-- [ ] 🧖‍♀️ [Spa](./spa/)
 - [ ] 🎵 [Spotify](./spotify/)
 - [ ] 📼 [VHS](./vhs/)
 
