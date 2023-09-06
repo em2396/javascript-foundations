@@ -19,13 +19,13 @@ function addIngredientToTaco(tacoName, ingredient) {
     return tacoName;
 }
 //price = tacoName.ingredients.ingredient.price
-function calculatePrice(tacoName, price) {
+function calculatePrice(tacoName, addToPrice) {
     var totalCost = 0;
-    console.log(tacoName.ingredients.price)
     for (var i = 0; i < tacoName.ingredients.length; i++){
-    tacoName.ingredients[i].price+=totalCost
+        var addToCost = tacoName.ingredients[i].price;
+        totalCost+=addToCost;
     }
-    return tacoName.name, totalCost;
+   return totalCost;
 }
 
 module.exports = {
